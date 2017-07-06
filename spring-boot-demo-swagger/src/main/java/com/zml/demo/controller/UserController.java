@@ -27,14 +27,14 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @ApiOperation("用户列表")
+    @ApiOperation("根据id获取用户")
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public User get(@PathVariable Long id) {
         User user = userMapper.get(id);
         System.out.println("abcd");
         return user;
     }
-    @ApiOperation("根据id获取用户")
+    @ApiOperation("用户列表")
     @RequestMapping(value = "",method = RequestMethod.GET)
     public List<User> list() {
         List<User> userList = userMapper.listAll();
